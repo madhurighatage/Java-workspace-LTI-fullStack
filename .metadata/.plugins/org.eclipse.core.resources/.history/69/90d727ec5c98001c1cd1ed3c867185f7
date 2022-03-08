@@ -1,0 +1,9 @@
+package com.javainuse.aspect;
+
+public class Human {
+	
+	public void wakeup() {
+		System.out.println("Good morning");
+	}
+
+}

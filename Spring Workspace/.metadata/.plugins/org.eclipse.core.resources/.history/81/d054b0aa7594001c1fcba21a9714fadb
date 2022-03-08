@@ -1,0 +1,17 @@
+package com.lti.jpademo.demo5jpabasics;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class UserApp 
+{
+    public static void main( String[] args )
+    {
+       
+       EntityManagerFactory factory = Persistence.createEntityManagerFactory("JPA-PU");
+       EntityManager em = factory.createEntityManager();
+
+       
+    }
+}

@@ -1,0 +1,11 @@
+package com.lti.homeloan.dao;
+
+import com.lti.homeloan.bean.UserDetails;
+
+
+public interface UserRegDao {
+
+	public abstract int saveRegisterUser(UserDetails userdts);
+	public int adminLogin(UserLogin userLogin);
+	
+}

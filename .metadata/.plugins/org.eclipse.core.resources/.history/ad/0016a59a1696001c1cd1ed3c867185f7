@@ -1,0 +1,6 @@
+package com.lti.appl.dao;
+
+public interface EmpJpaDaoRepository  extends JpaRepository<Employee, Integer>{
+
+
+}

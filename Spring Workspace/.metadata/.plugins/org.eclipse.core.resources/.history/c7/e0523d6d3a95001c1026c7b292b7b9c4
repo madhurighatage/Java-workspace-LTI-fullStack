@@ -1,0 +1,12 @@
+package com.lti.demo;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class TestController {
+
+	public String showMsg() {
+		return "Hello.....";
+		
+	}
+}

@@ -1,0 +1,5 @@
+package com.lti.jpademo.demo5jpabasics;
+
+public class Employee {
+
+}

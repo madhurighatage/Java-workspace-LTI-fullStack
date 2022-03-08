@@ -1,0 +1,5 @@
+package com.lti.restex.controller;
+
+public class Product {
+
+}

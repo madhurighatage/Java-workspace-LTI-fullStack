@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ page isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/SpringMVC/Test/SubmitForm" method="POST">
+
+		<p>
+			Student name: <input type="text" name="stuName">
+		</p>
+		<p>
+			Subject: <input type="text" name="subject">
+		</p>
+		<input type="submit" value="Submit form">
+	</form>
+</body>
+</html>

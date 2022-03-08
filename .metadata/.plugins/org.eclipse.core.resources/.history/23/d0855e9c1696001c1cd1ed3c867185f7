@@ -1,0 +1,18 @@
+package com.lti.appl.services;
+
+@Service
+public class EmployeeJpaRepService implements EmpService {
+	
+	//EmpDao empDao  EmpDapImpl - manual @ em.persist em.remvoe 
+	
+	@Autowired
+	private EmpJpaDaoRepository daoJpaRep;
+
+	@Override
+	public List<Employee> listAllEmployees() {
+		System.out.println("inside Services");
+		List<Employee> empList=daoJpaRep.findAll();
+		return empList;
+	}	
+
+}

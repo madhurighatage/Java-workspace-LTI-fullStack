@@ -1,0 +1,8 @@
+
+Feb 24, 2022 08:08:17.731 NEW SESSION
+Feb 24, 2022 08:08:17.732 [6212:7156:0224/080817.729:ERROR:chrome_browser_main_extra_parts_metrics.cc(227)] START: ReportBluetoothAvailability(). If you don't see the END: message, this is crbug.com/1216328.
+Feb 24, 2022 08:08:17.746 [6212:7156:0224/080817.746:ERROR:chrome_browser_main_extra_parts_metrics.cc(230)] END: ReportBluetoothAvailability()
+Feb 24, 2022 08:08:17.748 [6212:7156:0224/080817.748:ERROR:chrome_browser_main_extra_parts_metrics.cc(235)] START: GetDefaultBrowser(). If you don't see the END: message, this is crbug.com/1216328.
+Feb 24, 2022 08:08:17.761 [6212:7156:0224/080817.761:ERROR:chrome_browser_main_extra_parts_metrics.cc(239)] END: GetDefaultBrowser()
+Feb 24, 2022 08:08:17.788 [6212:5900:0224/080817.788:ERROR:device_event_log_impl.cc(214)] [08:08:17.788] Bluetooth: bluetooth_adapter_winrt.cc:1075 Getting Default Adapter failed.
+Feb 24, 2022 09:57:03.360 [6212:5900:0224/095703.359:ERROR:device_event_log_impl.cc(214)] [09:57:03.355] USB: usb_service_win.cc:260 Failed to get device driver name: Element not found. (0x490)

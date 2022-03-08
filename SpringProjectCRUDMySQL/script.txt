@@ -1,0 +1,20 @@
+drop table EMP_SPRING
+
+
+Create table EMP_SPRING
+(
+EMP_NO int AUTO_INCREMENT ,
+EMP_NAME varchar(10),
+EMP_SAL int,
+primary key(EMP_NO)
+);
+insert into EMP_SPRING values( 101,'Jay',50000);
+insert into EMP_SPRING values( 103,'Vijay',60000);
+insert into EMP_SPRING values( 104,'Sanjay',70000);
+
+
+if you get error : while adding record using @Gener...
+ALTER TABLE EMP_SPRING MODIFY EMP_NO int NOT NULL DEFAULT 0
+
+
+select * from EMP_SPRING

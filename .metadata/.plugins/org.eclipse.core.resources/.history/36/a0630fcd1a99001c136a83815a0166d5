@@ -1,0 +1,5 @@
+package com.lti.SpringSecurity.controller;
+
+public class HomeController {
+
+}

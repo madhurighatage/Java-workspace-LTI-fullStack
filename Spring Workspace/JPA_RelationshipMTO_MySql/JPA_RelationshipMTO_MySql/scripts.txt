@@ -1,0 +1,24 @@
+
+drop table DEPTOTM;
+
+create table DEPTOTM(deptId INT primary key, deptName varchar(25));
+insert into DEPTOTM values( 111, 'Sales');
+insert into DEPTOTM values( 112, 'HR');
+select * from DEPTOTM;
+
+drop table EMPMTO;
+
+create table EMPMTO (empId INT primary key, 
+empName varchar(25), 
+salary INT, 
+deptId INT references DEPTOTM(deptId) on delete set null);
+ 
+
+insert into EMPMTO values(101,'Jay',50000,111);
+insert into EMPMTO values(102,'Vijay',35000,112);
+insert into EMPMTO values(103,'Sanjay',35000,111);
+ 
+select * from EMPMTO
+
+
+

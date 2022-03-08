@@ -1,0 +1,70 @@
+package com.lti.homeloan;
+
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.hamcrest.Matchers;
+import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import com.lti.homeloan.bean.UserDetails;
+import com.lti.homeloan.bean.UserRegistration;
+import com.lti.homeloan.service.UserRegServiceImpl;
+
+@SpringBootTest
+@RunWith(SpringRunner.class)
+@AutoConfigureMockMvc
+public class HomeLoanProjectApplicationTests {
+
+	@Autowired
+	MockMvc mockMvc;
+
+	@MockBean
+	UserRegServiceImpl userService;
+
+	@Test
+	public void userRegister() throws Exception {
+
+		UserDetails u1 = new UserDetails(1, "Jasmin", "Barett", 8282658575l, "F", "Jasmin@gmail.com", "CA", 100000, 25,
+				"jas123", 2);
+		Mockito.when(userService.registerUser(u1)).thenReturn(u1.getuserResId());
+	}
+
+	@Test
+	public void validateUser() throws Exception {
+		UserDetails u1 = new UserDetails(1, "Jasmin", "Barett", 8282658575l,"F" ,"Jasmin@gmail.com", "CA",100000,25,"jas123",2);
+		
+		//Mockito.when(userService.validate(u1)).thenReturn(u1.getuserResId());
+
+		this.mockMvc.perform(MockMvcRequestBuilders.post("http://localhost:8080/userregistration/validate")
+		.content(asJsonString(new UserDetails(1, "Jasmin", "Barett", 8282658575l,"F" ,"Jasmin@gmail.com", "CA",100000,25,"jas123",2)))
+	      .contentType(MediaType.APPLICATION_JSON)
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$.primaryEmail", Matchers.is("Jasmin@gmail.com")));
+	}
+
+	public static String asJsonString(final Object obj) {
+	    try {
+	        return new ObjectMapper().writeValueAsString(obj);
+	    } catch (Exception e) {
+	        throw new RuntimeException(e);
+	    }	
+	
+}

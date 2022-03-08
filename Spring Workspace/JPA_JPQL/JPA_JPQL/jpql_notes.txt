@@ -1,0 +1,53 @@
+JPA JPQL Introduction
+The JPQL (Java Persistence Query Language) is an object-oriented query language 
+which is used to perform database operations on persistent entities. 
+
+used to perform database operations on persistent entities. 
+**** Instead of database table, JPQL uses entity object model to operate the SQL queries.
+ Here, the role of JPA is to transform JPQL into SQL. 
+Thus, it provides an easy platform for developers to handle SQL tasks.
+
+It can perform join operations.
+It can update and delete data in a bulk.
+It can perform aggregate function with sorting and grouping clauses.
+Single and multiple value result types.
+
+JPQL Features
+It is a platform-independent query language.
+It is simple and robust.
+It can be used with any type of database such as MySQL, Oracle.
+JPQL queries can be declared statically into metadata or can also be dynamically built in code.
+
+
+JPA Query API  - JPQL   ( HQL ) 
+Queries are represented in JPA 2 by two interfaces –
+ the old Query interface, which was the only interface available for representing queries in JPA 1, 
+and the new TypedQuery interface that was introduced in JPA 2. 
+The TypedQuery interface extends the Query interface.
+In JPA 2 the Query interface should be used mainly when the query result type is unknown or 
+when a query returns polymorphic results and the lowest known common denominator of all the result objects is Object. 
+When a more specific result type is expected queries should usually use the TypedQuery interface. 
+It is easier to run queries and process the query results in a type safe manner when using the TypedQuery interface.
+Sample Syntax 
+Query q1 = em.createQuery("SELECT c FROM Country c");-- Select c from country c; 
+
+TypedQuery<Country> q2 =      em.createQuery("SELECT c FROM Country c", Country.class);
+
+Dynamic JPQL-  query string can be built dynamically at runtime
+Criteria API -alternative way for building dynamic queries,  based on Java objects that represent query elements (replacing string based JPQL).
+It is the alternative way of defining a JPQL query. These queries are type-safe, and portable and easy to modify by changing the syntax. 
+The major advantage of the criteria API is that errors can be detected earlier during compile time.
+ String based JPQL queries and JPA criteria based queries are same in performance and efficiency.
+The criteria API is included into all versions of JPA
+
+Named Queries- using the @NamedQuery and @NamedQueries annotations. It is considered to be a good practice in JPA to prefer named queries over dynamic queries when possible.
+Running JPA Queries
+The Query interface defines two methods for running SELECT queries:
+•	Query.getSingleResult - for use when exactly one result object is expected.
+•	Query.getResultList - for general use in any other case.
+Similarly, the TypedQuery interface defines the following methods:
+•	TypedQuery.getSingleResult - for use when exactly one result object is expected.
+•	TypedQuery.getResultList - for general use in any other case.
+In addition, the Query interface defines a method for running DELETE and UPDATE queries:
+•	Query.executeUpdate - for running only DELETE and UPDATE queries.
+Ordinary Query Execution (with getResultList)

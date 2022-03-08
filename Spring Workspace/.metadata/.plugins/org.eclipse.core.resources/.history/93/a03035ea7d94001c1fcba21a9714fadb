@@ -1,0 +1,37 @@
+package com.lti.relational.OTO;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class UserApp 
+{
+    public static void main( String[] args )
+    {
+       
+       EntityManagerFactory factory = Persistence.createEntityManagerFactory("JPA-PU");
+       EntityManager em = factory.createEntityManager();
+
+//       Address a2=new Address(1000002L, "Kolhapur", "MH", "India");
+//       Employee e2=new Employee(102L, "Shravani", 99000, a2);
+//       
+//       Address a3=new Address(1000003L, "Pune", "MH", "India");
+//       Employee e3=new Employee(103L, "Aarthi", 85400, a3);
+//       Address a4=new Address(1000004L, "Delhi", "DL", "India");
+//       Employee e4=new Employee(104L, "Seema", 65658, a4);
+//       Address a5=new Address(1000005L, "Asam", "AS", "India");
+//       Employee e5=new Employee(105L, "Shweta", 35855, a5);
+       Employee e5=new Employee(105L, "Shweta", 35855, a);
+       
+       em.getTransaction().begin();
+//       em.find(Employee.class, 101L);
+//       em.remove(e1);
+       //em.persist(e1);
+       em.persist(e2);
+       em.persist(e3);
+       em.persist(e4);
+       em.persist(e5);
+       em.getTransaction().commit();
+       
+    }
+}

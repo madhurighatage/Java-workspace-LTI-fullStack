@@ -1,0 +1,70 @@
+package com.lti.jpademo.demo5jpabasics;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="EMPOTO")
+public class Employee {
+	
+	@Id
+	private Long empId;
+	private String empName;
+	private double empSal;
+	
+	private Address address;
+
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Employee(Long empId, String empName, double empSal, Address address) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.empSal = empSal;
+		this.address = address;
+	}
+
+	public Long getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(Long empId) {
+		this.empId = empId;
+	}
+
+	public String getEmpName() {
+		return empName;
+	}
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+
+	public double getEmpSal() {
+		return empSal;
+	}
+
+	public void setEmpSal(double empSal) {
+		this.empSal = empSal;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + ", empSal=" + empSal + ", address=" + address
+				+ "]";
+	}
+
+	
+}

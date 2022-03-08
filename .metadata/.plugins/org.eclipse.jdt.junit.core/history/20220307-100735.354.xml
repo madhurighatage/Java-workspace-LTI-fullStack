@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HomeLoanProjectApplicationTests" project="HomeLoanProject" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.lti.homeloan.HomeLoanProjectApplicationTests" time="0.672" displayname="HomeLoanProjectApplicationTests" uniqueid="[engine:junit-vintage]/[runner:com.lti.homeloan.HomeLoanProjectApplicationTests]">
+    <testcase name="userRegister" classname="com.lti.homeloan.HomeLoanProjectApplicationTests" time="0.181" displayname="userRegister" uniqueid="[engine:junit-vintage]/[runner:com.lti.homeloan.HomeLoanProjectApplicationTests]/[test:userRegister(com.lti.homeloan.HomeLoanProjectApplicationTests)]"/>
+    <testcase name="validateUser" classname="com.lti.homeloan.HomeLoanProjectApplicationTests" time="0.491" displayname="validateUser" uniqueid="[engine:junit-vintage]/[runner:com.lti.homeloan.HomeLoanProjectApplicationTests]/[test:validateUser(com.lti.homeloan.HomeLoanProjectApplicationTests)]"/>
+  </testsuite>
+</testrun>
